@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Trending AI & Agent — 每日增量追踪</title>
+    <meta name="description" content="2026-06-20 每日追踪报告：GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目。">
+    <meta name="keywords" content="GitHub Trending, AI, Agent, LLM, Open Source, 2026-06-20">
+    <meta name="author" content="Kimi Work">
+    <meta property="og:title" content="GitHub Trending AI · 2026-06-20">
+    <meta property="og:description" content="2026-06-20 每日追踪报告：GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目">
+    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e1a; --bg-secondary: #111827; --bg-card: rgba(17, 24, 39, 0.85);
+            --bg-card-hover: rgba(31, 41, 55, 0.9); --border: rgba(55, 65, 81, 0.5);
+            --text-primary: #f3f4f6; --text-secondary: #9ca3af; --text-muted: #6b7280;
+            --accent-cyan: #06b6d4; --accent-purple: #a855f7; --accent-pink: #ec4899;
+            --accent-orange: #f97316; --accent-green: #10b981; --accent-yellow: #f59e0b;
+            --gradient-1: linear-gradient(135deg, #06b6d4 0%, #a855f7 50%, #ec4899 100%);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
+        .bg-mesh { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse at 20% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(236, 72, 153, 0.05) 0%, transparent 60%); }
+        .bg-mesh::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23374151' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.4; animation: meshMove 120s linear infinite; }
+        @keyframes meshMove { 0% { transform: translate(0, 0); } 100% { transform: translate(60px, 60px); } }
+        .header { position: relative; z-index: 1; padding: 48px 24px 32px; text-align: center; background: linear-gradient(180deg, rgba(10,14,26,0.95) 0%, transparent 100%); }
+        .header-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 100px; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--accent-cyan); font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 20px; cursor: default; }
+        .header-badge .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+        .header h1 { font-size: 42px; font-weight: 800; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; animation: fadeInUp 0.8s ease-out 0.1s both; }
+        .header p { color: var(--text-secondary); font-size: 16px; max-width: 560px; margin: 0 auto 24px; animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .header-meta { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; animation: fadeInUp 0.8s ease-out 0.3s both; }
+        .meta-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+        .top-nav { position: relative; z-index: 1; display: flex; justify-content: center; gap: 12px; padding: 0 24px 16px; flex-wrap: wrap; animation: fadeInUp 0.8s ease-out 0.35s both; }
+        .top-nav a { display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 10px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary); font-size: 13px; font-weight: 500; text-decoration: none; transition: all 0.3s ease; }
+        .top-nav a:hover { background: var(--bg-card-hover); border-color: rgba(6, 182, 212, 0.4); color: var(--text-primary); transform: translateY(-2px); }
+        .date-selector { display: flex; justify-content: center; align-items: center; gap: 12px; padding: 0 24px 24px; position: relative; z-index: 1; animation: fadeInUp 0.8s ease-out 0.35s both; }
+        .date-selector select { padding: 10px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 14px; font-family: 'JetBrains Mono', monospace; cursor: pointer; outline: none; }
+        .filter-bar { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto 24px; padding: 0 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; animation: fadeInUp 0.8s ease-out 0.38s both; }
+        .search-box { flex: 1; min-width: 200px; position: relative; }
+        .search-box input { width: 100%; padding: 12px 16px 12px 44px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 14px; font-family: inherit; outline: none; transition: all 0.3s ease; }
+        .search-box input:focus { border-color: rgba(6, 182, 212, 0.5); box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1); }
+        .search-box input::placeholder { color: var(--text-muted); }
+        .search-box .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+        .search-box .search-icon svg { width: 18px; height: 18px; }
+        .filter-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+        .chip { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-family: inherit; white-space: nowrap; }
+        .chip:hover { background: var(--bg-card-hover); border-color: rgba(6, 182, 212, 0.4); color: var(--text-primary); }
+        .chip.active { background: var(--gradient-1); border-color: transparent; color: white; box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3); }
+        .chip .count { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 100px; background: rgba(255,255,255,0.2); font-size: 10px; font-weight: 700; margin-left: 6px; }
+        .stats-panel { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto 24px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; animation: fadeInUp 0.8s ease-out 0.4s both; }
+        .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 16px; text-align: center; transition: all 0.3s ease; }
+        .stat-card:hover { border-color: rgba(6, 182, 212, 0.3); transform: translateY(-2px); }
+        .stat-card .stat-value { font-size: 22px; font-weight: 700; font-family: 'JetBrains Mono', monospace; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-card .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tabs { position: relative; z-index: 1; display: flex; justify-content: center; gap: 8px; padding: 0 24px 32px; animation: fadeInUp 0.8s ease-out 0.42s both; }
+        .tab-btn { padding: 12px 28px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: inherit; display: flex; align-items: center; gap: 8px; }
+        .tab-btn:hover { background: var(--bg-card-hover); border-color: rgba(6, 182, 212, 0.4); color: var(--text-primary); transform: translateY(-2px); }
+        .tab-btn.active { background: var(--gradient-1); border-color: transparent; color: white; box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3); }
+        .tab-btn .count { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 100px; background: rgba(255,255,255,0.2); font-size: 11px; font-weight: 700; }
+        .content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; }
+        .section { display: none; animation: fadeIn 0.6s ease-out; }
+        .section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding: 0 4px; }
+        .section-title h2 { font-size: 20px; font-weight: 700; color: var(--text-primary); }
+        .section-title .line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+        .section-title .badge { padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; background: rgba(6, 182, 212, 0.1); color: var(--accent-cyan); border: 1px solid rgba(6, 182, 212, 0.2); }
+        .section-title .badge.week { background: rgba(249, 115, 22, 0.1); color: var(--accent-orange); border: 1px solid rgba(249, 115, 22, 0.2); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 20px; }
+        @media (max-width: 768px) { .cards-grid { grid-template-columns: 1fr; } .header h1 { font-size: 28px; } .filter-bar { flex-direction: column; align-items: stretch; } .tabs { flex-wrap: wrap; } .stats-panel { grid-template-columns: repeat(2, 1fr); } }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; backdrop-filter: blur(12px); cursor: pointer; text-decoration: none; display: block; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-1); opacity: 0; transition: opacity 0.3s ease; }
+        .card:hover { transform: translateY(-4px) scale(1.01); border-color: rgba(6, 182, 212, 0.3); box-shadow: var(--shadow-lg), 0 0 40px rgba(6, 182, 212, 0.08); background: var(--bg-card-hover); }
+        .card:hover::before { opacity: 1; }
+        .card.hidden { display: none; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; min-height: 32px; }
+        .card-rank { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 10px; font-size: 13px; font-weight: 800; font-family: 'JetBrains Mono', monospace; background: rgba(6, 182, 212, 0.1); color: var(--accent-cyan); border: 1px solid rgba(6, 182, 212, 0.2); flex-shrink: 0; }
+        .card-rank.top1 { background: rgba(245, 158, 11, 0.15); color: var(--accent-yellow); border-color: rgba(245, 158, 11, 0.3); }
+        .card-rank.top2 { background: rgba(156, 163, 175, 0.15); color: #d1d5db; border-color: rgba(156, 163, 175, 0.3); }
+        .card-rank.top3 { background: rgba(249, 115, 22, 0.15); color: var(--accent-orange); border-color: rgba(249, 115, 22, 0.3); }
+        .card-tags { display: flex; gap: 4px; flex-wrap: nowrap; overflow: hidden; max-height: 28px; align-items: center; justify-content: flex-end; margin-left: 8px; }
+        .tag { padding: 2px 7px; border-radius: 6px; font-size: 10px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
+        .tag-ai { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.2); }
+        .tag-agent { background: rgba(6, 182, 212, 0.15); color: #67e8f9; border: 1px solid rgba(6, 182, 212, 0.2); }
+        .tag-coding { background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.2); }
+        .tag-new { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .tag { background: rgba(107, 114, 128, 0.15); color: #9ca3af; border: 1px solid rgba(107, 114, 128, 0.2); }
+        .card-name { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; word-break: break-all; }
+        .card-name .owner { color: var(--text-muted); font-weight: 500; }
+        .card-name .slash { color: var(--text-muted); opacity: 0.5; }
+        .card-name .repo { color: var(--accent-cyan); }
+        .card:hover .card-name .repo { color: #67e8f9; }
+        .card-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .card-delta { display: flex; gap: 16px; margin-bottom: 12px; padding: 8px 12px; border-radius: 8px; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1); }
+        .delta-stars { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; }
+        .delta-forks { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent-cyan); font-weight: 600; }
+        .card-stats { display: flex; gap: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+        .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+        .stat svg { width: 16px; height: 16px; opacity: 0.6; }
+        .stat.stars { color: var(--accent-yellow); }
+        .stat.forks { color: var(--accent-cyan); }
+        .stat.lang { color: var(--accent-purple); }
+        .stat-value { font-weight: 600; }
+        .lang-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+        .footer { position: relative; z-index: 1; text-align: center; padding: 32px 24px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13px; }
+        .footer a { color: var(--accent-cyan); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+        .empty-state { text-align: center; padding: 64px 24px; color: var(--text-muted); }
+        .empty-state svg { width: 64px; height: 64px; margin-bottom: 16px; opacity: 0.3; }
+        .empty-state h3 { font-size: 18px; color: var(--text-secondary); margin-bottom: 8px; }
+        .empty-state p { font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="bg-mesh"></div>
+    <header class="header">
+        <div class="header-badge"><span class="pulse"></span>Live Trending</div>
+        <h1>GitHub Trending AI & Agent</h1>
+        <p>追踪 GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目</p>
+        <div class="header-meta">
+            <div class="meta-item">📅 2026-06-20</div>
+            <div class="meta-item">⚡ 增量追踪</div>
+        </div>
+    </header>
+
+    <nav class="top-nav">
+        <a href="github-trending-ai-index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            首页
+        </a>
+        <a href="github-trending-ai.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            最新报告
+        </a>
+        <a href="https://github.com/trending" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            GitHub Trending
+        </a>
+    </nav>
+
+    <div class="date-selector">
+        <label>📅 历史日期:</label>
+        <select id="dateSelect" onchange="window.location.href='github-trending-ai-'+this.value+'.html'">
+            <option value="2026-06-20" selected>2026-06-20</option>
+        </select>
+    </div>
+
+    <div class="filter-bar">
+        <div class="search-box">
+            <span class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="搜索仓库名称、描述或语言..." oninput="applyFilters()">
+        </div>
+        <div class="filter-chips" id="filterChips">
+            <button class="chip active" data-filter="all" onclick="setFilter(this, 'all')">全部 <span class="count">44</span></button>
+            <button class="chip" data-filter="AI" onclick="setFilter(this, 'AI')">AI <span class="count">35</span></button>
+            <button class="chip" data-filter="agent" onclick="setFilter(this, 'agent')">agent <span class="count">18</span></button>
+            <button class="chip" data-filter="coding" onclick="setFilter(this, 'coding')">coding <span class="count">13</span></button>
+            <button class="chip" data-filter="Python" onclick="setFilter(this, 'Python')">Python <span class="count">17</span></button>
+            <button class="chip" data-filter="TypeScript" onclick="setFilter(this, 'TypeScript')">TypeScript <span class="count">10</span></button>
+            <button class="chip" data-filter="JavaScript" onclick="setFilter(this, 'JavaScript')">JavaScript <span class="count">3</span></button>
+        </div>
+    </div>
+
+    <div class="stats-panel" id="statsPanel">
+        <div class="stat-card"><div class="stat-value">44</div><div class="stat-label">项目总数</div></div>
+        <div class="stat-card"><div class="stat-value">44</div><div class="stat-label">新增项目</div></div>
+        <div class="stat-card"><div class="stat-value">5012.2k</div><div class="stat-label">总新增 Star</div></div>
+        <div class="stat-card"><div class="stat-value">9</div><div class="stat-label">语言种类</div></div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('today', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            今日增量
+            <span class="count">15</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('week', this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            本周增量
+            <span class="count">15</span>
+        </button>
+    </div>
+
+    <main class="content">
+        <div id="today" class="section active">
+            <div class="section-title">
+                <h2>今日增量排行</h2>
+                <div class="line"></div>
+                <span class="badge">新增 Star / Fork 统计</span>
+            </div>
+            <div class="cards-grid" id="todayGrid">
+    <a href="https://github.com/EbookFoundation/free-programming-books" target="_blank" class="card" data-tags="AI coding" data-lang="Python" data-name="free-programming-books">
+        <div class="card-header">
+            <div class="card-rank top1">1</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span></div>
+        </div>
+        <div class="card-name"><span class="owner">EbookFoundation</span><span class="slash">/</span><span class="repo">free-programming-books</span></div>
+        <div class="card-desc">:books: Freely available programming books</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +390.5k</span>
+            <span class="delta-forks">🔀 +66.4k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">390.5k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">66.4k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/openclaw/openclaw" target="_blank" class="card" data-tags="AI" data-lang="TypeScript" data-name="openclaw">
+        <div class="card-header">
+            <div class="card-rank top2">2</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">openclaw</span><span class="slash">/</span><span class="repo">openclaw</span></div>
+        <div class="card-desc">Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 </div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +379.6k</span>
+            <span class="delta-forks">🔀 +79.5k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">379.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">79.5k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/affaan-m/ECC" target="_blank" class="card" data-tags="agent AI codex coding memory skill" data-lang="JavaScript" data-name="ECC">
+        <div class="card-header">
+            <div class="card-rank top3">3</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">memory</span><span class="tag ">skill</span></div>
+        </div>
+        <div class="card-name"><span class="owner">affaan-m</span><span class="slash">/</span><span class="repo">ECC</span></div>
+        <div class="card-desc">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +218.7k</span>
+            <span class="delta-forks">🔀 +33.5k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">218.7k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">33.5k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/NousResearch/hermes-agent" target="_blank" class="card" data-tags="agent" data-lang="Python" data-name="hermes-agent">
+        <div class="card-header">
+            <div class="card-rank">4</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span></div>
+        </div>
+        <div class="card-name"><span class="owner">NousResearch</span><span class="slash">/</span><span class="repo">hermes-agent</span></div>
+        <div class="card-desc">The agent that grows with you</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +198.1k</span>
+            <span class="delta-forks">🔀 +35.1k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">198.1k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">35.1k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/n8n-io/n8n" target="_blank" class="card" data-tags="AI coding automation" data-lang="TypeScript" data-name="n8n">
+        <div class="card-header">
+            <div class="card-rank">5</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">n8n-io</span><span class="slash">/</span><span class="repo">n8n</span></div>
+        <div class="card-desc">Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +193.3k</span>
+            <span class="delta-forks">🔀 +58.7k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">193.3k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">58.7k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" class="card" data-tags="AI" data-lang="Python" data-name="AutoGPT">
+        <div class="card-header">
+            <div class="card-rank">6</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">Significant-Gravitas</span><span class="slash">/</span><span class="repo">AutoGPT</span></div>
+        <div class="card-desc">AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +185.0k</span>
+            <span class="delta-forks">🔀 +46.1k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">185.0k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">46.1k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/anomalyco/opencode" target="_blank" class="card" data-tags="agent coding" data-lang="TypeScript" data-name="opencode">
+        <div class="card-header">
+            <div class="card-rank">7</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-coding">coding</span></div>
+        </div>
+        <div class="card-name"><span class="owner">anomalyco</span><span class="slash">/</span><span class="repo">opencode</span></div>
+        <div class="card-desc">The open source coding agent.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +176.6k</span>
+            <span class="delta-forks">🔀 +21.5k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">176.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">21.5k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/ollama/ollama" target="_blank" class="card" data-tags="AI" data-lang="Go" data-name="ollama">
+        <div class="card-header">
+            <div class="card-rank">8</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">ollama</span><span class="slash">/</span><span class="repo">ollama</span></div>
+        <div class="card-desc">Get up and running with Kimi-K2.6, GLM-5.1, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +174.6k</span>
+            <span class="delta-forks">🔀 +16.7k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">174.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">16.7k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#00ADD8"></span>Go</div>
+        </div>
+    </a>
+    <a href="https://github.com/f/prompts.chat" target="_blank" class="card" data-tags="AI" data-lang="HTML" data-name="prompts.chat">
+        <div class="card-header">
+            <div class="card-rank">9</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">f</span><span class="slash">/</span><span class="repo">prompts.chat</span></div>
+        <div class="card-desc">f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +164.0k</span>
+            <span class="delta-forks">🔀 +21.3k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">164.0k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">21.3k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</div>
+        </div>
+    </a>
+    <a href="https://github.com/huggingface/transformers" target="_blank" class="card" data-tags="AI automation" data-lang="Python" data-name="transformers">
+        <div class="card-header">
+            <div class="card-rank">10</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">huggingface</span><span class="slash">/</span><span class="repo">transformers</span></div>
+        <div class="card-desc">🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. </div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +161.8k</span>
+            <span class="delta-forks">🔀 +33.6k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">161.8k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">33.6k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/langflow-ai/langflow" target="_blank" class="card" data-tags="agent AI automation" data-lang="Python" data-name="langflow">
+        <div class="card-header">
+            <div class="card-rank">11</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">langflow-ai</span><span class="slash">/</span><span class="repo">langflow</span></div>
+        <div class="card-desc">Langflow is a powerful tool for building and deploying AI-powered agents and workflows.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +149.9k</span>
+            <span class="delta-forks">🔀 +9.3k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">149.9k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">9.3k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/langgenius/dify" target="_blank" class="card" data-tags="agent automation" data-lang="TypeScript" data-name="dify">
+        <div class="card-header">
+            <div class="card-rank">12</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">langgenius</span><span class="slash">/</span><span class="repo">dify</span></div>
+        <div class="card-desc">Production-ready platform for agentic workflow development.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +145.9k</span>
+            <span class="delta-forks">🔀 +22.9k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">145.9k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">22.9k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/open-webui/open-webui" target="_blank" class="card" data-tags="AI" data-lang="Python" data-name="open-webui">
+        <div class="card-header">
+            <div class="card-rank">13</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">open-webui</span><span class="slash">/</span><span class="repo">open-webui</span></div>
+        <div class="card-desc">User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +142.4k</span>
+            <span class="delta-forks">🔀 +20.5k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">142.4k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">20.5k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/langchain-ai/langchain" target="_blank" class="card" data-tags="agent AI" data-lang="Python" data-name="langchain">
+        <div class="card-header">
+            <div class="card-rank">14</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">langchain-ai</span><span class="slash">/</span><span class="repo">langchain</span></div>
+        <div class="card-desc">The agent engineering platform.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +139.8k</span>
+            <span class="delta-forks">🔀 +23.2k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">139.8k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">23.2k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/firecrawl/firecrawl" target="_blank" class="card" data-tags="NEW" data-lang="TypeScript" data-name="firecrawl">
+        <div class="card-header">
+            <div class="card-rank">15</div>
+            <div class="card-tags"><span class="tag tag-new">NEW</span></div>
+        </div>
+        <div class="card-name"><span class="owner">firecrawl</span><span class="slash">/</span><span class="repo">firecrawl</span></div>
+        <div class="card-desc">The API to search, scrape, and interact with the web at scale. 🔥</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +135.7k</span>
+            <span class="delta-forks">🔀 +7.9k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">135.7k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">7.9k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+            </div>
+        </div>
+        <div id="week" class="section">
+            <div class="section-title">
+                <h2>本周增量排行</h2>
+                <div class="line"></div>
+                <span class="badge week">本周汇总</span>
+            </div>
+            <div class="cards-grid" id="weekGrid">
+    <a href="https://github.com/EbookFoundation/free-programming-books" target="_blank" class="card" data-tags="AI coding" data-lang="Python" data-name="free-programming-books">
+        <div class="card-header">
+            <div class="card-rank top1">1</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span></div>
+        </div>
+        <div class="card-name"><span class="owner">EbookFoundation</span><span class="slash">/</span><span class="repo">free-programming-books</span></div>
+        <div class="card-desc">:books: Freely available programming books</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +390.5k</span>
+            <span class="delta-forks">🔀 +66.4k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">390.5k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">66.4k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/openclaw/openclaw" target="_blank" class="card" data-tags="AI" data-lang="TypeScript" data-name="openclaw">
+        <div class="card-header">
+            <div class="card-rank top2">2</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">openclaw</span><span class="slash">/</span><span class="repo">openclaw</span></div>
+        <div class="card-desc">Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 </div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +379.6k</span>
+            <span class="delta-forks">🔀 +79.5k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">379.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">79.5k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/affaan-m/ECC" target="_blank" class="card" data-tags="agent AI codex coding memory skill" data-lang="JavaScript" data-name="ECC">
+        <div class="card-header">
+            <div class="card-rank top3">3</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">memory</span><span class="tag ">skill</span></div>
+        </div>
+        <div class="card-name"><span class="owner">affaan-m</span><span class="slash">/</span><span class="repo">ECC</span></div>
+        <div class="card-desc">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +218.7k</span>
+            <span class="delta-forks">🔀 +33.5k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">218.7k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">33.5k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/NousResearch/hermes-agent" target="_blank" class="card" data-tags="agent" data-lang="Python" data-name="hermes-agent">
+        <div class="card-header">
+            <div class="card-rank">4</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span></div>
+        </div>
+        <div class="card-name"><span class="owner">NousResearch</span><span class="slash">/</span><span class="repo">hermes-agent</span></div>
+        <div class="card-desc">The agent that grows with you</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +198.1k</span>
+            <span class="delta-forks">🔀 +35.1k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">198.1k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">35.1k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/n8n-io/n8n" target="_blank" class="card" data-tags="AI coding automation" data-lang="TypeScript" data-name="n8n">
+        <div class="card-header">
+            <div class="card-rank">5</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">n8n-io</span><span class="slash">/</span><span class="repo">n8n</span></div>
+        <div class="card-desc">Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +193.3k</span>
+            <span class="delta-forks">🔀 +58.7k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">193.3k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">58.7k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" class="card" data-tags="AI" data-lang="Python" data-name="AutoGPT">
+        <div class="card-header">
+            <div class="card-rank">6</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">Significant-Gravitas</span><span class="slash">/</span><span class="repo">AutoGPT</span></div>
+        <div class="card-desc">AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +185.0k</span>
+            <span class="delta-forks">🔀 +46.1k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">185.0k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">46.1k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/anomalyco/opencode" target="_blank" class="card" data-tags="agent coding" data-lang="TypeScript" data-name="opencode">
+        <div class="card-header">
+            <div class="card-rank">7</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-coding">coding</span></div>
+        </div>
+        <div class="card-name"><span class="owner">anomalyco</span><span class="slash">/</span><span class="repo">opencode</span></div>
+        <div class="card-desc">The open source coding agent.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +176.6k</span>
+            <span class="delta-forks">🔀 +21.5k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">176.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">21.5k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/ollama/ollama" target="_blank" class="card" data-tags="AI" data-lang="Go" data-name="ollama">
+        <div class="card-header">
+            <div class="card-rank">8</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">ollama</span><span class="slash">/</span><span class="repo">ollama</span></div>
+        <div class="card-desc">Get up and running with Kimi-K2.6, GLM-5.1, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +174.6k</span>
+            <span class="delta-forks">🔀 +16.7k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">174.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">16.7k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#00ADD8"></span>Go</div>
+        </div>
+    </a>
+    <a href="https://github.com/f/prompts.chat" target="_blank" class="card" data-tags="AI" data-lang="HTML" data-name="prompts.chat">
+        <div class="card-header">
+            <div class="card-rank">9</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">f</span><span class="slash">/</span><span class="repo">prompts.chat</span></div>
+        <div class="card-desc">f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +164.0k</span>
+            <span class="delta-forks">🔀 +21.3k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">164.0k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">21.3k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#e34c26"></span>HTML</div>
+        </div>
+    </a>
+    <a href="https://github.com/huggingface/transformers" target="_blank" class="card" data-tags="AI automation" data-lang="Python" data-name="transformers">
+        <div class="card-header">
+            <div class="card-rank">10</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">huggingface</span><span class="slash">/</span><span class="repo">transformers</span></div>
+        <div class="card-desc">🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. </div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +161.8k</span>
+            <span class="delta-forks">🔀 +33.6k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">161.8k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">33.6k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/langflow-ai/langflow" target="_blank" class="card" data-tags="agent AI automation" data-lang="Python" data-name="langflow">
+        <div class="card-header">
+            <div class="card-rank">11</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">langflow-ai</span><span class="slash">/</span><span class="repo">langflow</span></div>
+        <div class="card-desc">Langflow is a powerful tool for building and deploying AI-powered agents and workflows.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +149.9k</span>
+            <span class="delta-forks">🔀 +9.3k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">149.9k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">9.3k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/langgenius/dify" target="_blank" class="card" data-tags="agent automation" data-lang="TypeScript" data-name="dify">
+        <div class="card-header">
+            <div class="card-rank">12</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">langgenius</span><span class="slash">/</span><span class="repo">dify</span></div>
+        <div class="card-desc">Production-ready platform for agentic workflow development.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +145.9k</span>
+            <span class="delta-forks">🔀 +22.9k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">145.9k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">22.9k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/open-webui/open-webui" target="_blank" class="card" data-tags="AI" data-lang="Python" data-name="open-webui">
+        <div class="card-header">
+            <div class="card-rank">13</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">open-webui</span><span class="slash">/</span><span class="repo">open-webui</span></div>
+        <div class="card-desc">User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +142.4k</span>
+            <span class="delta-forks">🔀 +20.5k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">142.4k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">20.5k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/langchain-ai/langchain" target="_blank" class="card" data-tags="agent AI" data-lang="Python" data-name="langchain">
+        <div class="card-header">
+            <div class="card-rank">14</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span></div>
+        </div>
+        <div class="card-name"><span class="owner">langchain-ai</span><span class="slash">/</span><span class="repo">langchain</span></div>
+        <div class="card-desc">The agent engineering platform.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +139.8k</span>
+            <span class="delta-forks">🔀 +23.2k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">139.8k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">23.2k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/firecrawl/firecrawl" target="_blank" class="card" data-tags="NEW" data-lang="TypeScript" data-name="firecrawl">
+        <div class="card-header">
+            <div class="card-rank">15</div>
+            <div class="card-tags"><span class="tag tag-new">NEW</span></div>
+        </div>
+        <div class="card-name"><span class="owner">firecrawl</span><span class="slash">/</span><span class="repo">firecrawl</span></div>
+        <div class="card-desc">The API to search, scrape, and interact with the web at scale. 🔥</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +135.7k</span>
+            <span class="delta-forks">🔀 +7.9k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">135.7k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">7.9k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>数据来源 GitHub API · 增量 = 今日 - 昨日 · 每周日汇总本周</p>
+        <p>生成时间 2026-06-20 · 由 Kimi Work 自动化生成</p>
+    </footer>
+
+    <script>
+        function switchTab(tab, btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(tab).classList.add('active');
+            applyFilters();
+        }
+        let currentFilter = 'all';
+        let searchQuery = '';
+        function setFilter(el, filter) {
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            currentFilter = filter;
+            applyFilters();
+        }
+        function applyFilters() {
+            searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+            const activeSection = document.querySelector('.section.active');
+            if (!activeSection) return;
+            const grid = activeSection.querySelector('.cards-grid');
+            const cards = grid.querySelectorAll('.card');
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const tags = (card.dataset.tags || '').toLowerCase();
+                const lang = (card.dataset.lang || '').toLowerCase();
+                const name = (card.dataset.name || '').toLowerCase();
+                const desc = card.querySelector('.card-desc')?.textContent.toLowerCase() || '';
+                const matchesFilter = currentFilter === 'all' || tags.includes(currentFilter.toLowerCase()) || lang === currentFilter.toLowerCase();
+                const matchesSearch = !searchQuery || name.includes(searchQuery) || desc.includes(searchQuery) || lang.includes(searchQuery) || tags.includes(searchQuery);
+                if (matchesFilter && matchesSearch) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            let emptyState = grid.querySelector('.empty-state');
+            if (visibleCount === 0) {
+                if (!emptyState) {
+                    emptyState = document.createElement('div');
+                    emptyState.className = 'empty-state';
+                    emptyState.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg><h3>未找到匹配项目</h3><p>请尝试其他搜索词或筛选条件</p>';
+                    grid.appendChild(emptyState);
+                }
+                emptyState.style.display = 'block';
+            } else if (emptyState) {
+                emptyState.style.display = 'none';
+            }
+        }
+        async function loadHistory() {
+            try {
+                const resp = await fetch('github-trending-ai-history.json');
+                const data = await resp.json();
+                const dates = Object.keys(data).sort().reverse();
+                const select = document.getElementById('dateSelect');
+                select.innerHTML = '';
+                dates.forEach(d => {
+                    const opt = document.createElement('option');
+                    opt.value = d;
+                    opt.textContent = d;
+                    if (d === '2026-06-20') opt.selected = true;
+                    select.appendChild(opt);
+                });
+            } catch (e) {}
+        }
+        loadHistory();
+    </script>
+</body>
+</html>
