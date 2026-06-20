@@ -944,7 +944,7 @@ def main():
     
     # 4c. 生成首页
     index_html = generate_index_html(today_str, history)
-    index_path = OUTPUT_DIR / "github-trending-ai-index.html"
+    index_path = OUTPUT_DIR / "index.html"
     if not args.dry_run:
         with open(index_path, "w", encoding="utf-8") as f:
             f.write(index_html)
@@ -962,7 +962,7 @@ def main():
     print(f"[Done] 自动化更新完成！")
     print(f"  日期归档: github-trending-ai-{today_str}.html")
     print(f"  最新报告: github-trending-ai.html")
-    print(f"  首页: github-trending-ai-index.html")
+    print(f"  首页: index.html")
     print(f"  历史记录: {HISTORY_FILE.name}")
     return 0
 
