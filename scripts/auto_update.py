@@ -485,7 +485,7 @@ def generate_report_page_html(today_str, today_data, history, is_archive=False):
     <header class="header">
         <div class="header-badge"><span class="pulse"></span>Live Trending</div>
         <h1>GitHub Trending AI & Agent</h1>
-        <p>追踪 GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目</p>
+        <p>基于 GitHub Search API 追踪 AI / Agent / LLM 关键词仓库，按新增 Star / Fork 排序（数据范围与 github.com/trending 不同）</p>
         <div class="header-meta">
             <div class="meta-item">📅 {today_str}</div>
             <div class="meta-item">⚡ 增量追踪</div>
@@ -493,7 +493,7 @@ def generate_report_page_html(today_str, today_data, history, is_archive=False):
     </header>
 
     <nav class="top-nav">
-        <a href="github-trending-ai-index.html">
+        <a href="index.html">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
             首页
         </a>
@@ -570,7 +570,7 @@ def generate_report_page_html(today_str, today_data, history, is_archive=False):
     </main>
 
     <footer class="footer">
-        <p>数据来源 GitHub API · 增量 = 今日 - 昨日 · 每周日汇总本周</p>
+        <p>数据来源 GitHub Search API · 增量 = 今日 - 昨日 · 每周日汇总本周</p>
         <p>生成时间 {today_str} · 由 Kimi Work 自动化生成</p>
     </footer>
 
@@ -783,7 +783,7 @@ def generate_index_html(today_str, history):
     <section class="hero">
         <div class="hero-badge"><span class="pulse"></span>自动更新</div>
         <h1>GitHub Trending AI & Agent</h1>
-        <p>每日追踪 GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目，自动归档、增量排序。</p>
+        <p>每日基于 GitHub Search API 追踪 AI / Agent / LLM 关键词仓库，按新增 Star / Fork 排序（数据范围与 github.com/trending 不同），自动归档、增量排序。</p>
         <div class="hero-actions">
             <a href="github-trending-ai.html" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -854,7 +854,7 @@ def generate_index_html(today_str, history):
 
         <div class="about-section">
             <h3>关于这个项目</h3>
-            <p>GitHub Trending AI & Agent 是一个自动化追踪网站，每天抓取 GitHub 上 AI、Agent、LLM 相关开源项目的增量数据，按新增 Star 和 Fork 排序，生成可阅读的追踪报告。</p>
+            <p>本站点通过 GitHub Search API 追踪 AI 相关开源仓库，每天抓取 GitHub 上 AI、Agent、LLM 相关开源项目的增量数据，按新增 Star 和 Fork 排序，生成可阅读的追踪报告。</p>
             <div class="features">
                 <div class="feature">
                     <div class="icon">⚡</div>
@@ -877,7 +877,7 @@ def generate_index_html(today_str, history):
     </main>
 
     <footer class="footer">
-        <p>数据来源 GitHub API · 增量 = 今日 - 昨日 · 自动归档</p>
+        <p>数据来源 GitHub Search API · 增量 = 今日 - 昨日 · 自动归档</p>
         <p>生成时间 {today_str} · 由 Kimi Work 自动化生成</p>
     </footer>
 </body>
