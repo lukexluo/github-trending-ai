@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Trending AI & Agent — 每日开源追踪</title>
+    <meta name="description" content="每日追踪 GitHub 上 AI、Agent、LLM 相关最活跃开源项目，按增量自动排序归档。">
+    <meta name="keywords" content="GitHub Trending, AI, Agent, LLM, Open Source, 开源项目, 每日追踪">
+    <meta name="author" content="Kimi Work">
+    <meta property="og:title" content="GitHub Trending AI & Agent — 每日开源追踪">
+    <meta property="og:description" content="每日追踪 GitHub 上 AI、Agent、LLM 相关最活跃开源项目">
+    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e1a; --bg-secondary: #111827; --bg-card: rgba(17, 24, 39, 0.85);
+            --border: rgba(55, 65, 81, 0.5); --text-primary: #f3f4f6; --text-secondary: #9ca3af; --text-muted: #6b7280;
+            --accent-cyan: #06b6d4; --accent-purple: #a855f7; --accent-pink: #ec4899; --accent-orange: #f97316;
+            --accent-green: #10b981; --accent-yellow: #f59e0b;
+            --gradient-1: linear-gradient(135deg, #06b6d4 0%, #a855f7 50%, #ec4899 100%);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; min-height: 100vh; overflow-x: hidden; }
+        .bg-mesh { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse at 20% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(236, 72, 153, 0.05) 0%, transparent 60%); }
+        .bg-mesh::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23374151' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.4; animation: meshMove 120s linear infinite; }
+        @keyframes meshMove { 0% { transform: translate(0, 0); } 100% { transform: translate(60px, 60px); } }
+        .hero { position: relative; z-index: 1; padding: 64px 24px 48px; text-align: center; background: linear-gradient(180deg, rgba(10,14,26,0.95) 0%, transparent 100%); }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border-radius: 100px; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--accent-cyan); font-size: 13px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 24px; animation: fadeInDown 0.8s ease-out; }
+        .hero-badge .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+        .hero h1 { font-size: 48px; font-weight: 800; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; animation: fadeInUp 0.8s ease-out 0.1s both; }
+        .hero p { color: var(--text-secondary); font-size: 18px; max-width: 600px; margin: 0 auto 32px; animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; animation: fadeInUp 0.8s ease-out 0.3s both; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 12px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; font-family: inherit; }
+        .btn-primary { background: var(--gradient-1); color: white; box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(168, 85, 247, 0.4); }
+        .btn-secondary { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border); }
+        .btn-secondary:hover { background: rgba(31,41,55,0.9); border-color: rgba(6, 182, 212, 0.4); transform: translateY(-2px); }
+        .stats-overview { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto 48px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; animation: fadeInUp 0.8s ease-out 0.4s both; }
+        .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; text-align: center; transition: all 0.3s ease; backdrop-filter: blur(12px); }
+        .stat-card:hover { border-color: rgba(6, 182, 212, 0.3); transform: translateY(-2px); }
+        .stat-card .stat-icon { font-size: 24px; margin-bottom: 8px; }
+        .stat-card .stat-value { font-size: 26px; font-weight: 700; font-family: 'JetBrains Mono', monospace; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-card .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 24px 64px; }
+        .section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding: 0 4px; }
+        .section-title h2 { font-size: 22px; font-weight: 700; color: var(--text-primary); }
+        .section-title .line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+        .section-title .badge { padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; background: rgba(6, 182, 212, 0.1); color: var(--accent-cyan); border: 1px solid rgba(6, 182, 212, 0.2); }
+        .latest-card { display: flex; align-items: center; gap: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-bottom: 32px; transition: all 0.4s ease; text-decoration: none; color: inherit; backdrop-filter: blur(12px); position: relative; overflow: hidden; animation: fadeInUp 0.8s ease-out 0.5s both; }
+        .latest-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-1); opacity: 0; transition: opacity 0.3s ease; }
+        .latest-card:hover { transform: translateY(-4px); border-color: rgba(6, 182, 212, 0.3); box-shadow: var(--shadow-lg), 0 0 40px rgba(6, 182, 212, 0.08); }
+        .latest-card:hover::before { opacity: 1; }
+        .latest-card .date-block { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 80px; height: 80px; border-radius: 16px; background: var(--gradient-1); color: white; flex-shrink: 0; }
+        .latest-card .date-block .day { font-size: 28px; font-weight: 800; font-family: 'JetBrains Mono', monospace; line-height: 1; }
+        .latest-card .date-block .month { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
+        .latest-card .info { flex: 1; }
+        .latest-card .info h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .latest-card .info p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .latest-card .meta-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .latest-card .meta-tag { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; background: rgba(16, 185, 129, 0.1); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .latest-card .arrow { color: var(--accent-cyan); font-size: 24px; transition: transform 0.3s ease; }
+        .latest-card:hover .arrow { transform: translateX(4px); }
+        .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; animation: fadeInUp 0.8s ease-out 0.6s both; }
+        .archive-item { display: flex; align-items: center; gap: 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; text-decoration: none; color: inherit; transition: all 0.3s ease; backdrop-filter: blur(12px); }
+        .archive-item:hover { background: rgba(31,41,55,0.9); border-color: rgba(6, 182, 212, 0.3); transform: translateY(-2px); }
+        .archive-item .date-icon { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: rgba(6, 182, 212, 0.1); color: var(--accent-cyan); font-size: 18px; flex-shrink: 0; }
+        .archive-item .info { flex: 1; }
+        .archive-item .info .date { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+        .archive-item .info .desc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+        .archive-item .arrow-icon { color: var(--text-muted); transition: color 0.3s ease; }
+        .archive-item:hover .arrow-icon { color: var(--accent-cyan); }
+        .about-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; margin-top: 48px; animation: fadeInUp 0.8s ease-out 0.7s both; backdrop-filter: blur(12px); }
+        .about-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .about-section p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+        .about-section .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 20px; }
+        .feature { display: flex; align-items: flex-start; gap: 12px; }
+        .feature .icon { font-size: 20px; }
+        .feature .text { font-size: 13px; color: var(--text-secondary); }
+        .feature .text strong { color: var(--text-primary); display: block; margin-bottom: 2px; }
+        .footer { position: relative; z-index: 1; text-align: center; padding: 32px 24px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 13px; }
+        .footer a { color: var(--accent-cyan); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .hero h1 { font-size: 32px; } .hero p { font-size: 16px; } .stats-overview { grid-template-columns: repeat(2, 1fr); } .latest-card { flex-direction: column; align-items: flex-start; } .latest-card .arrow { display: none; } }
+        @media (max-width: 640px) { .archive-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="bg-mesh"></div>
+    <section class="hero">
+        <div class="hero-badge"><span class="pulse"></span>自动更新</div>
+        <h1>GitHub Trending AI & Agent</h1>
+        <p>每日追踪 GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目，自动归档、增量排序。</p>
+        <div class="hero-actions">
+            <a href="github-trending-ai.html" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                查看最新报告
+            </a>
+            <a href="https://github.com/trending" target="_blank" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                GitHub Trending
+            </a>
+        </div>
+    </section>
+
+    <div class="stats-overview">
+        <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div class="stat-value">2</div>
+            <div class="stat-label">追踪天数</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">📦</div>
+            <div class="stat-value">100</div>
+            <div class="stat-label">收录项目</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-value">10346.4k</div>
+            <div class="stat-label">总 Star</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🔀</div>
+            <div class="stat-value">1630.4k</div>
+            <div class="stat-label">总 Fork</div>
+        </div>
+    </div>
+
+    <main class="content">
+        <div class="section-title">
+            <h2>最新报告</h2>
+            <div class="line"></div>
+            <span class="badge">Latest</span>
+        </div>
+
+        <a href="github-trending-ai.html" class="latest-card">
+            <div class="date-block">
+                <div class="day">21</div>
+                <div class="month">06月 2026</div>
+            </div>
+            <div class="info">
+                <h3>2026-06-21 每日追踪报告</h3>
+                <p>今日追踪 57 个活跃项目。涵盖 Agent 框架、MCP 工具、AI 编码助手等方向。</p>
+                <div class="meta-tags">
+                    <span class="meta-tag">今日 57 项</span>
+                    <span class="meta-tag">1 种语言</span>
+                </div>
+            </div>
+            <div class="arrow">→</div>
+        </a>
+
+        <div class="section-title">
+            <h2>历史归档</h2>
+            <div class="line"></div>
+            <span class="badge">Archive</span>
+        </div>
+
+        <div class="archive-grid">
+        <a href="github-trending-ai-2026-06-21.html" class="archive-item">
+            <div class="date-icon">📅</div>
+            <div class="info">
+                <div class="date">2026-06-21</div>
+                <div class="desc">57 个项目 · 增量追踪</div>
+            </div>
+            <div class="arrow-icon">→</div>
+        </a>
+        <a href="github-trending-ai-2026-06-20.html" class="archive-item">
+            <div class="date-icon">📅</div>
+            <div class="info">
+                <div class="date">2026-06-20</div>
+                <div class="desc">43 个项目 · 增量追踪</div>
+            </div>
+            <div class="arrow-icon">→</div>
+        </a>
+
+        </div>
+
+        <div class="about-section">
+            <h3>关于这个项目</h3>
+            <p>GitHub Trending AI & Agent 是一个自动化追踪网站，每天抓取 GitHub 上 AI、Agent、LLM 相关开源项目的增量数据，按新增 Star 和 Fork 排序，生成可阅读的追踪报告。</p>
+            <div class="features">
+                <div class="feature">
+                    <div class="icon">⚡</div>
+                    <div class="text"><strong>增量追踪</strong>对比昨日数据，只关注新增变化</div>
+                </div>
+                <div class="feature">
+                    <div class="icon">🤖</div>
+                    <div class="text"><strong>AI 聚焦</strong>专注 Agent、LLM、MCP 等前沿方向</div>
+                </div>
+                <div class="feature">
+                    <div class="icon">📊</div>
+                    <div class="text"><strong>自动归档</strong>按日保存，支持历史回溯对比</div>
+                </div>
+                <div class="feature">
+                    <div class="icon">🔍</div>
+                    <div class="text"><strong>实时筛选</strong>按标签、语言、关键词搜索项目</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>数据来源 GitHub API · 增量 = 今日 - 昨日 · 自动归档</p>
+        <p>生成时间 2026-06-21 · 由 Kimi Work 自动化生成</p>
+    </footer>
+</body>
+</html>
