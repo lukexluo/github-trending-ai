@@ -21070,5 +21070,267 @@
       "stars": 34,
       "forks": 3
     }
+  },
+  "2026-09-12": {
+    "msitarzewski/agency-agents": {
+      "stars": 151879,
+      "forks": 24465
+    },
+    "supabase/supabase": {
+      "stars": 109087,
+      "forks": 13741
+    },
+    "DietrichGebert/ponytail": {
+      "stars": 136458,
+      "forks": 7316
+    },
+    "affaan-m/ECC": {
+      "stars": 256936,
+      "forks": 38445
+    },
+    "obra/superpowers": {
+      "stars": 285711,
+      "forks": 25561
+    },
+    "diegosouzapw/OmniRoute": {
+      "stars": 65194,
+      "forks": 9119
+    },
+    "firecrawl/firecrawl": {
+      "stars": 179494,
+      "forks": 9762
+    },
+    "github/spec-kit": {
+      "stars": 135992,
+      "forks": 12214
+    },
+    "NousResearch/hermes-agent": {
+      "stars": 244847,
+      "forks": 50786
+    },
+    "Shubhamsaboo/awesome-llm-apps": {
+      "stars": 137515,
+      "forks": 20226
+    },
+    "harry0703/MoneyPrinterTurbo": {
+      "stars": 122742,
+      "forks": 18977
+    },
+    "earendil-works/pi": {
+      "stars": 104375,
+      "forks": 13081
+    },
+    "JuliusBrussee/caveman": {
+      "stars": 105207,
+      "forks": 6095
+    },
+    "D4Vinci/Scrapling": {
+      "stars": 80486,
+      "forks": 8123
+    },
+    "Graphify-Labs/graphify": {
+      "stars": 117184,
+      "forks": 11353
+    },
+    "Panniantong/Agent-Reach": {
+      "stars": 79665,
+      "forks": 6874
+    },
+    "openai/codex": {
+      "stars": 123595,
+      "forks": 19037
+    },
+    "anomalyco/opencode": {
+      "stars": 206912,
+      "forks": 27087
+    },
+    "Comfy-Org/ComfyUI": {
+      "stars": 132747,
+      "forks": 15675
+    },
+    "VoltAgent/awesome-design-md": {
+      "stars": 115541,
+      "forks": 12995
+    },
+    "farion1231/cc-switch": {
+      "stars": 132521,
+      "forks": 9134
+    },
+    "OpenHands/OpenHands": {
+      "stars": 87649,
+      "forks": 11483
+    },
+    "addyosmani/agent-skills": {
+      "stars": 93704,
+      "forks": 9965
+    },
+    "chopratejas/headroom": {
+      "stars": 71719,
+      "forks": 5496
+    },
+    "headroomlabs-ai/headroom": {
+      "stars": 71719,
+      "forks": 5496
+    },
+    "anthropics/skills": {
+      "stars": 175960,
+      "forks": 20824
+    },
+    "f/prompts.chat": {
+      "stars": 170109,
+      "forks": 21879
+    },
+    "ggml-org/llama.cpp": {
+      "stars": 127986,
+      "forks": 23079
+    },
+    "TauricResearch/TradingAgents": {
+      "stars": 104783,
+      "forks": 20103
+    },
+    "browser-use/browser-use": {
+      "stars": 114333,
+      "forks": 12567
+    },
+    "ChromeDevTools/chrome-devtools-mcp": {
+      "stars": 51745,
+      "forks": 3635
+    },
+    "langgenius/dify": {
+      "stars": 155522,
+      "forks": 24567
+    },
+    "n8n-io/n8n": {
+      "stars": 204095,
+      "forks": 60646
+    },
+    "anthropics/claude-code": {
+      "stars": 144837,
+      "forks": 23129
+    },
+    "EbookFoundation/free-programming-books": {
+      "stars": 396605,
+      "forks": 66763
+    },
+    "langflow-ai/langflow": {
+      "stars": 154655,
+      "forks": 10078
+    },
+    "langchain-ai/langchain": {
+      "stars": 146191,
+      "forks": 24427
+    },
+    "huggingface/transformers": {
+      "stars": 165187,
+      "forks": 34528
+    },
+    "ollama/ollama": {
+      "stars": 180738,
+      "forks": 17830
+    },
+    "koala73/worldmonitor": {
+      "stars": 86129,
+      "forks": 13063
+    },
+    "openclaw/openclaw": {
+      "stars": 389504,
+      "forks": 81878
+    },
+    "ComposioHQ/awesome-claude-skills": {
+      "stars": 74913,
+      "forks": 8653
+    },
+    "PaddlePaddle/PaddleOCR": {
+      "stars": 89387,
+      "forks": 11323
+    },
+    "bytedance/deer-flow": {
+      "stars": 82323,
+      "forks": 11356
+    },
+    "upstash/context7": {
+      "stars": 61923,
+      "forks": 2981
+    },
+    "HKUDS/nanobot": {
+      "stars": 48059,
+      "forks": 8499
+    },
+    "danny-avila/LibreChat": {
+      "stars": 43069,
+      "forks": 8933
+    },
+    "aaif-goose/goose": {
+      "stars": 54164,
+      "forks": 6222
+    },
+    "lobehub/lobehub": {
+      "stars": 82433,
+      "forks": 15876
+    },
+    "AstrBotDevs/AstrBot": {
+      "stars": 40402,
+      "forks": 2912
+    },
+    "Snailclimb/JavaGuide": {
+      "stars": 158473,
+      "forks": 46138
+    },
+    "google-gemini/gemini-cli": {
+      "stars": 106943,
+      "forks": 14558
+    },
+    "netdata/netdata": {
+      "stars": 80500,
+      "forks": 6623
+    },
+    "MemPalace/mempalace": {
+      "stars": 59018,
+      "forks": 7564
+    },
+    "hiyouga/LlamaFactory": {
+      "stars": 74727,
+      "forks": 9147
+    },
+    "Chalarangelo/30-seconds-of-code": {
+      "stars": 129053,
+      "forks": 12481
+    },
+    "electron/electron": {
+      "stars": 123008,
+      "forks": 17491
+    },
+    "Significant-Gravitas/AutoGPT": {
+      "stars": 187276,
+      "forks": 46020
+    },
+    "zylon-ai/private-gpt": {
+      "stars": 57504,
+      "forks": 7616
+    },
+    "AI-XiaoDao/ai-browser-mcp": {
+      "stars": 49,
+      "forks": 10
+    },
+    "BhavyaImpact/beginner-core-programming": {
+      "stars": 6,
+      "forks": 0
+    },
+    "CLYiX/CodePaidie": {
+      "stars": 48,
+      "forks": 6
+    },
+    "HMDSimDev/heartmorrow": {
+      "stars": 183,
+      "forks": 19
+    },
+    "fatonh/symfony-skills": {
+      "stars": 34,
+      "forks": 3
+    },
+    "HKUSTDial/DataMagic": {
+      "stars": 241,
+      "forks": 6
+    }
   }
 }
