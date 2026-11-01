@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Trending AI & Agent — 每日增量追踪</title>
-    <meta name="description" content="2026-10-31 每日追踪报告：GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目。">
-    <meta name="keywords" content="GitHub Trending, AI, Agent, LLM, Open Source, 2026-10-31">
+    <meta name="description" content="2026-11-01 每日追踪报告：GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目。">
+    <meta name="keywords" content="GitHub Trending, AI, Agent, LLM, Open Source, 2026-11-01">
     <meta name="author" content="Kimi Work">
-    <meta property="og:title" content="GitHub Trending AI · 2026-10-31">
-    <meta property="og:description" content="2026-10-31 每日追踪报告：GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目">
+    <meta property="og:title" content="GitHub Trending AI · 2026-11-01">
+    <meta property="og:description" content="2026-11-01 每日追踪报告：GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目">
     <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -128,7 +128,7 @@
         <h1>GitHub Trending AI & Agent</h1>
         <p>追踪 GitHub 上新增 Star/Fork 最活跃的 AI、Agent、LLM 相关开源项目</p>
         <div class="header-meta">
-            <div class="meta-item">📅 2026-10-31</div>
+            <div class="meta-item">📅 2026-11-01</div>
             <div class="meta-item">⚡ 增量追踪</div>
         </div>
     </header>
@@ -151,7 +151,8 @@
     <div class="date-selector">
         <label>📅 历史日期:</label>
         <select id="dateSelect" onchange="window.location.href='github-trending-ai-'+this.value+'.html'">
-            <option value="2026-10-31" selected>2026-10-31</option>
+            <option value="2026-11-01" selected>2026-11-01</option>
+<option value="2026-10-31">2026-10-31</option>
 <option value="2026-10-30">2026-10-30</option>
 <option value="2026-10-29">2026-10-29</option>
 <option value="2026-10-28">2026-10-28</option>
@@ -294,21 +295,21 @@
             <input type="text" id="searchInput" placeholder="搜索仓库名称、描述或语言..." oninput="applyFilters()">
         </div>
         <div class="filter-chips" id="filterChips">
-            <button class="chip active" data-filter="all" onclick="setFilter(this, 'all')">全部 <span class="count">67</span></button>
-            <button class="chip" data-filter="AI" onclick="setFilter(this, 'AI')">AI <span class="count">52</span></button>
-            <button class="chip" data-filter="agent" onclick="setFilter(this, 'agent')">agent <span class="count">35</span></button>
-            <button class="chip" data-filter="coding" onclick="setFilter(this, 'coding')">coding <span class="count">28</span></button>
+            <button class="chip active" data-filter="all" onclick="setFilter(this, 'all')">全部 <span class="count">69</span></button>
+            <button class="chip" data-filter="AI" onclick="setFilter(this, 'AI')">AI <span class="count">53</span></button>
+            <button class="chip" data-filter="agent" onclick="setFilter(this, 'agent')">agent <span class="count">36</span></button>
+            <button class="chip" data-filter="coding" onclick="setFilter(this, 'coding')">coding <span class="count">30</span></button>
             <button class="chip" data-filter="Python" onclick="setFilter(this, 'Python')">Python <span class="count">27</span></button>
-            <button class="chip" data-filter="TypeScript" onclick="setFilter(this, 'TypeScript')">TypeScript <span class="count">19</span></button>
+            <button class="chip" data-filter="TypeScript" onclick="setFilter(this, 'TypeScript')">TypeScript <span class="count">21</span></button>
             <button class="chip" data-filter="JavaScript" onclick="setFilter(this, 'JavaScript')">JavaScript <span class="count">6</span></button>
         </div>
     </div>
 
     <div class="stats-panel" id="statsPanel">
-        <div class="stat-card"><div class="stat-value">67</div><div class="stat-label">项目总数</div></div>
-        <div class="stat-card"><div class="stat-value">62</div><div class="stat-label">新增项目</div></div>
-        <div class="stat-card"><div class="stat-value">14.5k</div><div class="stat-label">总新增 Star</div></div>
-        <div class="stat-card"><div class="stat-value">10</div><div class="stat-label">语言种类</div></div>
+        <div class="stat-card"><div class="stat-value">69</div><div class="stat-label">项目总数</div></div>
+        <div class="stat-card"><div class="stat-value">64</div><div class="stat-label">新增项目</div></div>
+        <div class="stat-card"><div class="stat-value">254.9k</div><div class="stat-label">总新增 Star</div></div>
+        <div class="stat-card"><div class="stat-value">11</div><div class="stat-label">语言种类</div></div>
     </div>
 
     <div class="tabs">
@@ -332,190 +333,190 @@
                 <span class="badge">新增 Star / Fork 统计</span>
             </div>
             <div class="cards-grid" id="todayGrid">
-    <a href="https://github.com/morluto/rea" target="_blank" class="card" data-tags="agent" data-lang="TypeScript" data-name="rea">
+    <a href="https://github.com/shadcn-ui/ui" target="_blank" class="card" data-tags="coding" data-lang="TypeScript" data-name="ui">
         <div class="card-header">
             <div class="card-rank top1">1</div>
+            <div class="card-tags"><span class="tag tag-coding">coding</span></div>
+        </div>
+        <div class="card-name"><span class="owner">shadcn-ui</span><span class="slash">/</span><span class="repo">ui</span></div>
+        <div class="card-desc">Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +127.1k</span>
+            <span class="delta-forks">🔀 +12.0k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">127.1k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.0k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/stablyai/orca" target="_blank" class="card" data-tags="agent AI coding automation" data-lang="TypeScript" data-name="orca">
+        <div class="card-header">
+            <div class="card-rank top2">2</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">stablyai</span><span class="slash">/</span><span class="repo">orca</span></div>
+        <div class="card-desc">Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +112.4k</span>
+            <span class="delta-forks">🔀 +7.1k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">112.4k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">7.1k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/morluto/rea" target="_blank" class="card" data-tags="agent" data-lang="TypeScript" data-name="rea">
+        <div class="card-header">
+            <div class="card-rank top3">3</div>
             <div class="card-tags"><span class="tag tag-agent">agent</span></div>
         </div>
         <div class="card-name"><span class="owner">morluto</span><span class="slash">/</span><span class="repo">rea</span></div>
         <div class="card-desc">Reverse engineer anything with agents, from app behavior down to native binaries.</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +3.3k</span>
-            <span class="delta-forks">🔀 +776</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +3.2k</span>
+            <span class="delta-forks">🔀 +675</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">415.1k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">103.8k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">418.2k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">104.5k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
         </div>
     </a>
     <a href="https://github.com/mattpocock/skills" target="_blank" class="card" data-tags="agent AI skill" data-lang="Shell" data-name="skills">
         <div class="card-header">
-            <div class="card-rank top2">2</div>
+            <div class="card-rank">4</div>
             <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">skill</span></div>
         </div>
         <div class="card-name"><span class="owner">mattpocock</span><span class="slash">/</span><span class="repo">skills</span></div>
         <div class="card-desc">Skills for Real Engineers. Straight from my .agents directory.</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +845</span>
-            <span class="delta-forks">🔀 +71</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +932</span>
+            <span class="delta-forks">🔀 +84</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">308.2k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">25.9k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">309.1k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">26.0k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#89e051"></span>Shell</div>
-        </div>
-    </a>
-    <a href="https://github.com/openai/codex" target="_blank" class="card" data-tags="agent codex coding" data-lang="Rust" data-name="codex">
-        <div class="card-header">
-            <div class="card-rank top3">3</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span></div>
-        </div>
-        <div class="card-name"><span class="owner">openai</span><span class="slash">/</span><span class="repo">codex</span></div>
-        <div class="card-desc">Lightweight coding agent that runs in your terminal</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +680</span>
-            <span class="delta-forks">🔀 +90</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">132.5k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">20.9k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#dea584"></span>Rust</div>
-        </div>
-    </a>
-    <a href="https://github.com/anthropics/skills" target="_blank" class="card" data-tags="agent skill" data-lang="Python" data-name="skills">
-        <div class="card-header">
-            <div class="card-rank">4</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag ">skill</span></div>
-        </div>
-        <div class="card-name"><span class="owner">anthropics</span><span class="slash">/</span><span class="repo">skills</span></div>
-        <div class="card-desc">Public repository for Agent Skills</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +620</span>
-            <span class="delta-forks">🔀 +51</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">185.8k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">21.9k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-        </div>
-    </a>
-    <a href="https://github.com/affaan-m/ECC" target="_blank" class="card" data-tags="agent AI codex coding memory skill" data-lang="JavaScript" data-name="ECC">
-        <div class="card-header">
-            <div class="card-rank">5</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">memory</span><span class="tag ">skill</span></div>
-        </div>
-        <div class="card-name"><span class="owner">affaan-m</span><span class="slash">/</span><span class="repo">ECC</span></div>
-        <div class="card-desc">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +593</span>
-            <span class="delta-forks">🔀 +103</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">293.9k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">43.5k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
-        </div>
-    </a>
-    <a href="https://github.com/Graphify-Labs/graphify" target="_blank" class="card" data-tags="AI codex coding skill" data-lang="Python" data-name="graphify">
-        <div class="card-header">
-            <div class="card-rank">6</div>
-            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">skill</span></div>
-        </div>
-        <div class="card-name"><span class="owner">Graphify-Labs</span><span class="slash">/</span><span class="repo">graphify</span></div>
-        <div class="card-desc">Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +562</span>
-            <span class="delta-forks">🔀 +52</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">139.9k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">13.3k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-        </div>
-    </a>
-    <a href="https://github.com/DietrichGebert/ponytail" target="_blank" class="card" data-tags="agent AI coding" data-lang="JavaScript" data-name="ponytail">
-        <div class="card-header">
-            <div class="card-rank">7</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span></div>
-        </div>
-        <div class="card-name"><span class="owner">DietrichGebert</span><span class="slash">/</span><span class="repo">ponytail</span></div>
-        <div class="card-desc">Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +560</span>
-            <span class="delta-forks">🔀 +42</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">181.4k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">10.0k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
-        </div>
-    </a>
-    <a href="https://github.com/paperclipai/paperclip" target="_blank" class="card" data-tags="agent" data-lang="TypeScript" data-name="paperclip">
-        <div class="card-header">
-            <div class="card-rank">8</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span></div>
-        </div>
-        <div class="card-name"><span class="owner">paperclipai</span><span class="slash">/</span><span class="repo">paperclip</span></div>
-        <div class="card-desc">The open-source app everyone uses to manage agents at work</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +427</span>
-            <span class="delta-forks">🔀 +77</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">109.4k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">18.1k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
-        </div>
-    </a>
-    <a href="https://github.com/Panniantong/Agent-Reach" target="_blank" class="card" data-tags="agent AI" data-lang="Python" data-name="Agent-Reach">
-        <div class="card-header">
-            <div class="card-rank">9</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span></div>
-        </div>
-        <div class="card-name"><span class="owner">Panniantong</span><span class="slash">/</span><span class="repo">Agent-Reach</span></div>
-        <div class="card-desc">Give your AI agent eyes to see the entire internet. Read &amp; search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +420</span>
-            <span class="delta-forks">🔀 +47</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">107.2k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">9.5k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-        </div>
-    </a>
-    <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" class="card" data-tags="AI skill" data-lang="Python" data-name="ui-ux-pro-max-skill">
-        <div class="card-header">
-            <div class="card-rank">10</div>
-            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">skill</span></div>
-        </div>
-        <div class="card-name"><span class="owner">nextlevelbuilder</span><span class="slash">/</span><span class="repo">ui-ux-pro-max-skill</span></div>
-        <div class="card-desc">An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +373</span>
-            <span class="delta-forks">🔀 +47</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">143.4k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">15.2k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
         </div>
     </a>
     <a href="https://github.com/D4Vinci/Scrapling" target="_blank" class="card" data-tags="AI" data-lang="Python" data-name="Scrapling">
         <div class="card-header">
-            <div class="card-rank">11</div>
+            <div class="card-rank">5</div>
             <div class="card-tags"><span class="tag tag-ai">AI</span></div>
         </div>
         <div class="card-name"><span class="owner">D4Vinci</span><span class="slash">/</span><span class="repo">Scrapling</span></div>
         <div class="card-desc">🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don&#x27;t be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +348</span>
-            <span class="delta-forks">🔀 +88</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +888</span>
+            <span class="delta-forks">🔀 +195</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">90.8k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">9.5k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">91.7k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">9.7k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/affaan-m/ECC" target="_blank" class="card" data-tags="agent AI codex coding memory skill" data-lang="JavaScript" data-name="ECC">
+        <div class="card-header">
+            <div class="card-rank">6</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">memory</span><span class="tag ">skill</span></div>
+        </div>
+        <div class="card-name"><span class="owner">affaan-m</span><span class="slash">/</span><span class="repo">ECC</span></div>
+        <div class="card-desc">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +755</span>
+            <span class="delta-forks">🔀 +112</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">294.7k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">43.6k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/github/spec-kit" target="_blank" class="card" data-tags="NEW" data-lang="Python" data-name="spec-kit">
+        <div class="card-header">
+            <div class="card-rank">7</div>
+            <div class="card-tags"><span class="tag tag-new">NEW</span></div>
+        </div>
+        <div class="card-name"><span class="owner">github</span><span class="slash">/</span><span class="repo">spec-kit</span></div>
+        <div class="card-desc">💫 Toolkit to help you get started with SDD or any other process!</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +632</span>
+            <span class="delta-forks">🔀 +60</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">144.9k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">13.0k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/DietrichGebert/ponytail" target="_blank" class="card" data-tags="agent AI coding" data-lang="JavaScript" data-name="ponytail">
+        <div class="card-header">
+            <div class="card-rank">8</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span></div>
+        </div>
+        <div class="card-name"><span class="owner">DietrichGebert</span><span class="slash">/</span><span class="repo">ponytail</span></div>
+        <div class="card-desc">Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +600</span>
+            <span class="delta-forks">🔀 +46</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">182.0k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">10.0k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/Graphify-Labs/graphify" target="_blank" class="card" data-tags="AI codex coding skill" data-lang="Python" data-name="graphify">
+        <div class="card-header">
+            <div class="card-rank">9</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">skill</span></div>
+        </div>
+        <div class="card-name"><span class="owner">Graphify-Labs</span><span class="slash">/</span><span class="repo">graphify</span></div>
+        <div class="card-desc">Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +515</span>
+            <span class="delta-forks">🔀 +72</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">140.5k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">13.4k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/paperclipai/paperclip" target="_blank" class="card" data-tags="agent" data-lang="TypeScript" data-name="paperclip">
+        <div class="card-header">
+            <div class="card-rank">10</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span></div>
+        </div>
+        <div class="card-name"><span class="owner">paperclipai</span><span class="slash">/</span><span class="repo">paperclip</span></div>
+        <div class="card-desc">The open-source app everyone uses to manage agents at work</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +478</span>
+            <span class="delta-forks">🔀 +94</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">109.9k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">18.2k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/anthropics/skills" target="_blank" class="card" data-tags="agent skill" data-lang="Python" data-name="skills">
+        <div class="card-header">
+            <div class="card-rank">11</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag ">skill</span></div>
+        </div>
+        <div class="card-name"><span class="owner">anthropics</span><span class="slash">/</span><span class="repo">skills</span></div>
+        <div class="card-desc">Public repository for Agent Skills</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +476</span>
+            <span class="delta-forks">🔀 +69</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">186.3k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">22.0k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
         </div>
     </a>
@@ -527,12 +528,12 @@
         <div class="card-name"><span class="owner">TauricResearch</span><span class="slash">/</span><span class="repo">TradingAgents</span></div>
         <div class="card-desc">TradingAgents: Multi-Agents LLM Financial Trading Framework</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +342</span>
-            <span class="delta-forks">🔀 +60</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +456</span>
+            <span class="delta-forks">🔀 +107</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">119.0k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">22.7k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">119.5k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">22.9k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
         </div>
     </a>
@@ -544,12 +545,12 @@
         <div class="card-name"><span class="owner">cheaper-inference</span><span class="slash">/</span><span class="repo">OmniRoute</span></div>
         <div class="card-desc">Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline &amp; Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +320</span>
-            <span class="delta-forks">🔀 +92</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +416</span>
+            <span class="delta-forks">🔀 +85</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">83.2k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.4k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">83.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.5k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
         </div>
     </a>
@@ -561,30 +562,30 @@
         <div class="card-name"><span class="owner">diegosouzapw</span><span class="slash">/</span><span class="repo">OmniRoute</span></div>
         <div class="card-desc">Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline &amp; Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +320</span>
-            <span class="delta-forks">🔀 +92</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +416</span>
+            <span class="delta-forks">🔀 +85</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">83.2k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.4k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">83.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.5k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
         </div>
     </a>
-    <a href="https://github.com/firecrawl/firecrawl" target="_blank" class="card" data-tags="agent AI" data-lang="TypeScript" data-name="firecrawl">
+    <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" class="card" data-tags="AI skill" data-lang="Python" data-name="ui-ux-pro-max-skill">
         <div class="card-header">
             <div class="card-rank">15</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span></div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">skill</span></div>
         </div>
-        <div class="card-name"><span class="owner">firecrawl</span><span class="slash">/</span><span class="repo">firecrawl</span></div>
-        <div class="card-desc">Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥</div>
+        <div class="card-name"><span class="owner">nextlevelbuilder</span><span class="slash">/</span><span class="repo">ui-ux-pro-max-skill</span></div>
+        <div class="card-desc">An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +311</span>
-            <span class="delta-forks">🔀 +17</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +415</span>
+            <span class="delta-forks">🔀 +40</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">197.4k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">10.4k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">143.8k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">15.2k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
         </div>
     </a>
             </div>
@@ -596,190 +597,190 @@
                 <span class="badge week">本周汇总</span>
             </div>
             <div class="cards-grid" id="weekGrid">
-    <a href="https://github.com/morluto/rea" target="_blank" class="card" data-tags="agent" data-lang="TypeScript" data-name="rea">
+    <a href="https://github.com/shadcn-ui/ui" target="_blank" class="card" data-tags="coding" data-lang="TypeScript" data-name="ui">
         <div class="card-header">
             <div class="card-rank top1">1</div>
+            <div class="card-tags"><span class="tag tag-coding">coding</span></div>
+        </div>
+        <div class="card-name"><span class="owner">shadcn-ui</span><span class="slash">/</span><span class="repo">ui</span></div>
+        <div class="card-desc">Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +127.1k</span>
+            <span class="delta-forks">🔀 +12.0k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">127.1k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.0k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/stablyai/orca" target="_blank" class="card" data-tags="agent AI coding automation" data-lang="TypeScript" data-name="orca">
+        <div class="card-header">
+            <div class="card-rank top2">2</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span><span class="tag ">automation</span></div>
+        </div>
+        <div class="card-name"><span class="owner">stablyai</span><span class="slash">/</span><span class="repo">orca</span></div>
+        <div class="card-desc">Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +112.4k</span>
+            <span class="delta-forks">🔀 +7.1k</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">112.4k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">7.1k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/morluto/rea" target="_blank" class="card" data-tags="agent" data-lang="TypeScript" data-name="rea">
+        <div class="card-header">
+            <div class="card-rank top3">3</div>
             <div class="card-tags"><span class="tag tag-agent">agent</span></div>
         </div>
         <div class="card-name"><span class="owner">morluto</span><span class="slash">/</span><span class="repo">rea</span></div>
         <div class="card-desc">Reverse engineer anything with agents, from app behavior down to native binaries.</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +3.3k</span>
-            <span class="delta-forks">🔀 +776</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +3.2k</span>
+            <span class="delta-forks">🔀 +675</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">415.1k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">103.8k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">418.2k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">104.5k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
         </div>
     </a>
     <a href="https://github.com/mattpocock/skills" target="_blank" class="card" data-tags="agent AI skill" data-lang="Shell" data-name="skills">
         <div class="card-header">
-            <div class="card-rank top2">2</div>
+            <div class="card-rank">4</div>
             <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">skill</span></div>
         </div>
         <div class="card-name"><span class="owner">mattpocock</span><span class="slash">/</span><span class="repo">skills</span></div>
         <div class="card-desc">Skills for Real Engineers. Straight from my .agents directory.</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +845</span>
-            <span class="delta-forks">🔀 +71</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +932</span>
+            <span class="delta-forks">🔀 +84</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">308.2k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">25.9k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">309.1k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">26.0k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#89e051"></span>Shell</div>
-        </div>
-    </a>
-    <a href="https://github.com/openai/codex" target="_blank" class="card" data-tags="agent codex coding" data-lang="Rust" data-name="codex">
-        <div class="card-header">
-            <div class="card-rank top3">3</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span></div>
-        </div>
-        <div class="card-name"><span class="owner">openai</span><span class="slash">/</span><span class="repo">codex</span></div>
-        <div class="card-desc">Lightweight coding agent that runs in your terminal</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +680</span>
-            <span class="delta-forks">🔀 +90</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">132.5k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">20.9k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#dea584"></span>Rust</div>
-        </div>
-    </a>
-    <a href="https://github.com/anthropics/skills" target="_blank" class="card" data-tags="agent skill" data-lang="Python" data-name="skills">
-        <div class="card-header">
-            <div class="card-rank">4</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag ">skill</span></div>
-        </div>
-        <div class="card-name"><span class="owner">anthropics</span><span class="slash">/</span><span class="repo">skills</span></div>
-        <div class="card-desc">Public repository for Agent Skills</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +620</span>
-            <span class="delta-forks">🔀 +51</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">185.8k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">21.9k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-        </div>
-    </a>
-    <a href="https://github.com/affaan-m/ECC" target="_blank" class="card" data-tags="agent AI codex coding memory skill" data-lang="JavaScript" data-name="ECC">
-        <div class="card-header">
-            <div class="card-rank">5</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">memory</span><span class="tag ">skill</span></div>
-        </div>
-        <div class="card-name"><span class="owner">affaan-m</span><span class="slash">/</span><span class="repo">ECC</span></div>
-        <div class="card-desc">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +593</span>
-            <span class="delta-forks">🔀 +103</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">293.9k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">43.5k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
-        </div>
-    </a>
-    <a href="https://github.com/Graphify-Labs/graphify" target="_blank" class="card" data-tags="AI codex coding skill" data-lang="Python" data-name="graphify">
-        <div class="card-header">
-            <div class="card-rank">6</div>
-            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">skill</span></div>
-        </div>
-        <div class="card-name"><span class="owner">Graphify-Labs</span><span class="slash">/</span><span class="repo">graphify</span></div>
-        <div class="card-desc">Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +562</span>
-            <span class="delta-forks">🔀 +52</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">139.9k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">13.3k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-        </div>
-    </a>
-    <a href="https://github.com/DietrichGebert/ponytail" target="_blank" class="card" data-tags="agent AI coding" data-lang="JavaScript" data-name="ponytail">
-        <div class="card-header">
-            <div class="card-rank">7</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span></div>
-        </div>
-        <div class="card-name"><span class="owner">DietrichGebert</span><span class="slash">/</span><span class="repo">ponytail</span></div>
-        <div class="card-desc">Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +560</span>
-            <span class="delta-forks">🔀 +42</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">181.4k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">10.0k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
-        </div>
-    </a>
-    <a href="https://github.com/paperclipai/paperclip" target="_blank" class="card" data-tags="agent" data-lang="TypeScript" data-name="paperclip">
-        <div class="card-header">
-            <div class="card-rank">8</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span></div>
-        </div>
-        <div class="card-name"><span class="owner">paperclipai</span><span class="slash">/</span><span class="repo">paperclip</span></div>
-        <div class="card-desc">The open-source app everyone uses to manage agents at work</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +427</span>
-            <span class="delta-forks">🔀 +77</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">109.4k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">18.1k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
-        </div>
-    </a>
-    <a href="https://github.com/Panniantong/Agent-Reach" target="_blank" class="card" data-tags="agent AI" data-lang="Python" data-name="Agent-Reach">
-        <div class="card-header">
-            <div class="card-rank">9</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span></div>
-        </div>
-        <div class="card-name"><span class="owner">Panniantong</span><span class="slash">/</span><span class="repo">Agent-Reach</span></div>
-        <div class="card-desc">Give your AI agent eyes to see the entire internet. Read &amp; search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +420</span>
-            <span class="delta-forks">🔀 +47</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">107.2k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">9.5k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
-        </div>
-    </a>
-    <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" class="card" data-tags="AI skill" data-lang="Python" data-name="ui-ux-pro-max-skill">
-        <div class="card-header">
-            <div class="card-rank">10</div>
-            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">skill</span></div>
-        </div>
-        <div class="card-name"><span class="owner">nextlevelbuilder</span><span class="slash">/</span><span class="repo">ui-ux-pro-max-skill</span></div>
-        <div class="card-desc">An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.</div>
-        <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +373</span>
-            <span class="delta-forks">🔀 +47</span>
-        </div>
-        <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">143.4k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">15.2k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
         </div>
     </a>
     <a href="https://github.com/D4Vinci/Scrapling" target="_blank" class="card" data-tags="AI" data-lang="Python" data-name="Scrapling">
         <div class="card-header">
-            <div class="card-rank">11</div>
+            <div class="card-rank">5</div>
             <div class="card-tags"><span class="tag tag-ai">AI</span></div>
         </div>
         <div class="card-name"><span class="owner">D4Vinci</span><span class="slash">/</span><span class="repo">Scrapling</span></div>
         <div class="card-desc">🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don&#x27;t be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +348</span>
-            <span class="delta-forks">🔀 +88</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +888</span>
+            <span class="delta-forks">🔀 +195</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">90.8k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">9.5k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">91.7k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">9.7k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/affaan-m/ECC" target="_blank" class="card" data-tags="agent AI codex coding memory skill" data-lang="JavaScript" data-name="ECC">
+        <div class="card-header">
+            <div class="card-rank">6</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">memory</span><span class="tag ">skill</span></div>
+        </div>
+        <div class="card-name"><span class="owner">affaan-m</span><span class="slash">/</span><span class="repo">ECC</span></div>
+        <div class="card-desc">The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +755</span>
+            <span class="delta-forks">🔀 +112</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">294.7k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">43.6k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/github/spec-kit" target="_blank" class="card" data-tags="NEW" data-lang="Python" data-name="spec-kit">
+        <div class="card-header">
+            <div class="card-rank">7</div>
+            <div class="card-tags"><span class="tag tag-new">NEW</span></div>
+        </div>
+        <div class="card-name"><span class="owner">github</span><span class="slash">/</span><span class="repo">spec-kit</span></div>
+        <div class="card-desc">💫 Toolkit to help you get started with SDD or any other process!</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +632</span>
+            <span class="delta-forks">🔀 +60</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">144.9k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">13.0k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/DietrichGebert/ponytail" target="_blank" class="card" data-tags="agent AI coding" data-lang="JavaScript" data-name="ponytail">
+        <div class="card-header">
+            <div class="card-rank">8</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span><span class="tag tag-coding">coding</span></div>
+        </div>
+        <div class="card-name"><span class="owner">DietrichGebert</span><span class="slash">/</span><span class="repo">ponytail</span></div>
+        <div class="card-desc">Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +600</span>
+            <span class="delta-forks">🔀 +46</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">182.0k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">10.0k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/Graphify-Labs/graphify" target="_blank" class="card" data-tags="AI codex coding skill" data-lang="Python" data-name="graphify">
+        <div class="card-header">
+            <div class="card-rank">9</div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">codex</span><span class="tag tag-coding">coding</span><span class="tag ">skill</span></div>
+        </div>
+        <div class="card-name"><span class="owner">Graphify-Labs</span><span class="slash">/</span><span class="repo">graphify</span></div>
+        <div class="card-desc">Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +515</span>
+            <span class="delta-forks">🔀 +72</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">140.5k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">13.4k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
+        </div>
+    </a>
+    <a href="https://github.com/paperclipai/paperclip" target="_blank" class="card" data-tags="agent" data-lang="TypeScript" data-name="paperclip">
+        <div class="card-header">
+            <div class="card-rank">10</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span></div>
+        </div>
+        <div class="card-name"><span class="owner">paperclipai</span><span class="slash">/</span><span class="repo">paperclip</span></div>
+        <div class="card-desc">The open-source app everyone uses to manage agents at work</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +478</span>
+            <span class="delta-forks">🔀 +94</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">109.9k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">18.2k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+        </div>
+    </a>
+    <a href="https://github.com/anthropics/skills" target="_blank" class="card" data-tags="agent skill" data-lang="Python" data-name="skills">
+        <div class="card-header">
+            <div class="card-rank">11</div>
+            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag ">skill</span></div>
+        </div>
+        <div class="card-name"><span class="owner">anthropics</span><span class="slash">/</span><span class="repo">skills</span></div>
+        <div class="card-desc">Public repository for Agent Skills</div>
+        <div class="card-delta">
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +476</span>
+            <span class="delta-forks">🔀 +69</span>
+        </div>
+        <div class="card-stats">
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">186.3k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">22.0k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
         </div>
     </a>
@@ -791,12 +792,12 @@
         <div class="card-name"><span class="owner">TauricResearch</span><span class="slash">/</span><span class="repo">TradingAgents</span></div>
         <div class="card-desc">TradingAgents: Multi-Agents LLM Financial Trading Framework</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +342</span>
-            <span class="delta-forks">🔀 +60</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +456</span>
+            <span class="delta-forks">🔀 +107</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">119.0k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">22.7k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">119.5k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">22.9k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
         </div>
     </a>
@@ -808,12 +809,12 @@
         <div class="card-name"><span class="owner">cheaper-inference</span><span class="slash">/</span><span class="repo">OmniRoute</span></div>
         <div class="card-desc">Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline &amp; Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +320</span>
-            <span class="delta-forks">🔀 +92</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +416</span>
+            <span class="delta-forks">🔀 +85</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">83.2k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.4k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">83.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.5k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
         </div>
     </a>
@@ -825,30 +826,30 @@
         <div class="card-name"><span class="owner">diegosouzapw</span><span class="slash">/</span><span class="repo">OmniRoute</span></div>
         <div class="card-desc">Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline &amp; Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 900+ contributors</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +320</span>
-            <span class="delta-forks">🔀 +92</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +416</span>
+            <span class="delta-forks">🔀 +85</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">83.2k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.4k</span></div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">83.6k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">12.5k</span></div>
             <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
         </div>
     </a>
-    <a href="https://github.com/firecrawl/firecrawl" target="_blank" class="card" data-tags="agent AI" data-lang="TypeScript" data-name="firecrawl">
+    <a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" class="card" data-tags="AI skill" data-lang="Python" data-name="ui-ux-pro-max-skill">
         <div class="card-header">
             <div class="card-rank">15</div>
-            <div class="card-tags"><span class="tag tag-agent">agent</span><span class="tag tag-ai">AI</span></div>
+            <div class="card-tags"><span class="tag tag-ai">AI</span><span class="tag ">skill</span></div>
         </div>
-        <div class="card-name"><span class="owner">firecrawl</span><span class="slash">/</span><span class="repo">firecrawl</span></div>
-        <div class="card-desc">Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥</div>
+        <div class="card-name"><span class="owner">nextlevelbuilder</span><span class="slash">/</span><span class="repo">ui-ux-pro-max-skill</span></div>
+        <div class="card-desc">An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.</div>
         <div class="card-delta">
-            <span class="delta-stars" style="color:var(--accent-green)">▲ +311</span>
-            <span class="delta-forks">🔀 +17</span>
+            <span class="delta-stars" style="color:var(--accent-green)">▲ +415</span>
+            <span class="delta-forks">🔀 +40</span>
         </div>
         <div class="card-stats">
-            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">197.4k</span></div>
-            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">10.4k</span></div>
-            <div class="stat lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</div>
+            <div class="stat stars"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><span class="stat-value">143.8k</span></div>
+            <div class="stat forks"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 3a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H7z"/><path d="M12 12v.01"/></svg><span class="stat-value">15.2k</span></div>
+            <div class="stat lang"><span class="lang-dot" style="background:#3572A5"></span>Python</div>
         </div>
     </a>
             </div>
@@ -857,7 +858,7 @@
 
     <footer class="footer">
         <p>数据来源 GitHub API · 增量 = 今日 - 昨日 · 每周日汇总本周</p>
-        <p>生成时间 2026-10-31 · 由 Kimi Work 自动化生成</p>
+        <p>生成时间 2026-11-01 · 由 Kimi Work 自动化生成</p>
     </footer>
 
     <script>
@@ -921,7 +922,7 @@
                     const opt = document.createElement('option');
                     opt.value = d;
                     opt.textContent = d;
-                    if (d === '2026-10-31') opt.selected = true;
+                    if (d === '2026-11-01') opt.selected = true;
                     select.appendChild(opt);
                 });
             } catch (e) {}
